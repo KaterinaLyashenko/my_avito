@@ -38,7 +38,7 @@ class AdView(View):
 
     def post(self, request):
         data = json.loads(request.body)
-        new_ad = Category.objects.create(**data)
+        new_ad = Ad.objects.create(**data)
         return JsonResponse({"id": new_ad.id,
                              "name": new_ad.name,
                              "author": new_ad.author,
